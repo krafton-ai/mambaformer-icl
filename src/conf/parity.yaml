@@ -1,0 +1,33 @@
+inherit: 
+    - wandb.yaml
+model:
+    family: gpt2
+    n_embd: 256
+    n_layer: 12
+    n_head: 8
+    n_dims: 10
+    n_positions: 300
+    interleave: True
+training:
+    task: sparse_parity
+    task_kwargs: {"k": 2}
+    data: sparse_parity_sampler
+    batch_size: 64
+    learning_rate: 0.0004
+    save_every_steps: 10000
+    keep_every_steps: 100000
+    train_steps: 500001
+    curriculum:
+        dims:
+            start: 10
+            end: 10
+            inc: 1
+            interval: 2000
+        points:
+            start: 140
+            end: 140
+            inc: 2
+            interval: 2000
+out_dir: ../models/sparse_parity
+wandb:
+    name: "parity140_tf_embd256_layer12_dim10_lr4e-4"

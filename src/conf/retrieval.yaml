@@ -1,0 +1,34 @@
+inherit:
+    - wandb.yaml
+model:
+    family: gpt2
+    n_embd: 128
+    n_layer: 2
+    n_head: 8
+    n_dims: 20
+    n_positions: 130
+    interleave: False
+training:
+    task: retrieval
+    data: gaussian_for_retrieval
+    task_kwargs: {}
+    batch_size: 64
+    learning_rate: 0.0002
+    gradient_clip: 100.0
+    save_every_steps: 10000
+    keep_every_steps: 100000
+    train_steps: 500001
+    curriculum:
+        dims:
+            start: 20
+            end: 20
+            inc: 1
+            interval: 2000
+        points:
+            start: 64
+            end: 64
+            inc: 2
+            interval: 2000
+out_dir: ../models/vector_retrieval
+wandb:
+    name: "RET64_tf_embd128_layer2_dim20_lr2e-4"

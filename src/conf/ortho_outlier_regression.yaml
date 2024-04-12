@@ -1,0 +1,36 @@
+inherit: 
+    - wandb.yaml
+
+model:
+    family: gpt2
+    n_embd: 128
+    n_layer: 2
+    n_dims: 20
+    interleave: True
+
+training:
+    task: filter_ortho_linear_regression
+    task_kwargs: {}
+    data: filter
+    data_sampler_kwargs: {"prob": 0.5}
+    batch_size: 64
+    learning_rate: 0.0001
+    gradient_clip: 10.0
+    save_every_steps: 10000
+    keep_every_steps: 100000
+    train_steps: 500001
+    curriculum:
+        dims:
+            start: 5
+            end: 20
+            inc: 1
+            interval: 2000
+        points:
+            start: 26
+            end: 101
+            inc: 5
+            interval: 2000
+
+out_dir: ../models/filter_ortho_LR
+wandb:
+    name: "Ortho_tf_embd128_layer2_pr0.5_lr5e-5"
