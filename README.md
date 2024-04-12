@@ -1,7 +1,7 @@
 # MambaFormer In-context Learning
 MambaFormer in-context learning experiments and implementation from https://arxiv.org/abs/2402.04248
 
-![](diagram.png)
+![](model_diagram.png)
 
 ## Getting started
 You can start by cloning our repository and following the steps below.
