@@ -47,7 +47,7 @@ The generated data is subject to the model owner's policy.
 @article{park2024mambaformer,
     title={Can Mamba Learn How to Learn? A Comparative Study on In-Context Learning Tasks},
     author={Park, Jongho and Park, Jaeseung and Xiong, Zheyang and Lee, Nayoung and Cho, Jaewoong and Oymak, Samet and Lee, Kangwook and Papailiopoulos, Dimitris},
-    journal={arXiv preprint arXiv:2402.04248},
+    journal={International Conference on Machine Learning},
     year={2024}
 }
 ```
